@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--  Google fonts import  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!--  Vendor css import  -->
+    <link href="./assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+
+    <!-- Since we had serious isses with the start and any solution we came up with was not sustainable, we did some research on the internet.
+        Based on this article https://stepofweb.com/how-do-i-import-a-bootstrap-template-into-visual-studio/ we decided to use a template that 
+        finally allowed us to start the project. https://getbootstrap.com/docs/5.0/examples/ We downloaded the official zipped example from here.
+        Plain open source bootstrap example: https://github.com/twbs/bootstrap/releases/download/v5.0.2/bootstrap-5.0.2-examples.zip
+        And within this there is a dashboard folder, in which there is an example with a dashboard (this template is included in this file and can be 
+        compared with the final version).  -->
+
+        <!-- To help us remember in the future what we wrote, why we wrote it and what it means, we have added detailed comments to the html file. Sorry for this. -->
+    
+    
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- header content, Bootstrap classes applied to the header. -->
+  
+<header class="navbar navbar-dark sticky-top flex-md-nowrap p-0"> 
+    <!-- styles the navbar to have a dark background color, be sticky at the top of the page, and have flexible width for medium and larger screens. 
+        p-0 class is used to remove padding from an element. -->
+    <div class="brand-wrapper col-md-3 col-lg-2 me-0 px-3">
+          <!-- It is a container for the brand/logo section of the navbar. The classes set the column width for medium and large screens, and adjust margin and padding.
+    col-md-3: on screens with a medium or larger viewport width div will occupy 3 out of 12 column,  col-lg-2: on screens with a large or larger viewport width, the div will occupy 
+   me-0:  me stands for margin-right, and 0 specifies that there should be no right margin, px-3: px stands for horizontal padding, and 3 specifies a medium amount of padding-->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <!-- The navbar-brand class is a Bootstrap class for styling the brand within a navigation bar. The d-flex and align-items-center classes 
+                making the content of the anchor a flex container and aligning its items (the image and the span) vertically centered. -->
+            <img src="./assets/images/logo.svg" alt="Dashboard kit logo">
+            <span class="logo-name">
+            Dashboard kit
+        </span>
+        </a>
+<!-- this code represents a responsive navigation bar button that toggles the visibility of a collapsible sidebar menu. The button is initially visible on screens smaller than medium size (d-md-none), 
+    and it is styled using Bootstrap classes for a toggle button. -->
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <!-- aria-controls, aria-expanded, arial-label: these attributes provide accessibility information. -->
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+<!-- for a responsive web page layout with a sidebar navigation menu -->
+<div class="container-fluid main-content-wrapper">
+    <!-- This div contains the main content of the page and is set to take up the full width of the viewport (container-fluid). -->
+    <div class="row">
+        <!-- This (row) is the container of the columns -->
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+            <!-- d-md-block: This class specifies that the navigation is displayed as a block element, (display: block;) on medium-sized screens (md and larger). -->
+            <div class="position-sticky pt-3">
+                <!-- stays fixed when scrolling, padding 3 at the top -->
+                <ul class="nav flex-column">
+                    <!-- navigation list that will be displayed vertically (flex-column) in the sidebar -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">
+                            <span class="selection-indicator"></span>
+                            <!-- visual indicator, indicating the active selection -->
+                            <i class="fa-solid fa-chart-pie"></i>
+                            <!-- This i element with the classes fa-solid and fa-chart-pie is for FontAwesome icons to display a chart pie icon. -->
+                            Overview
+                        </a>
+                    </li>
+<!-- Another navigation item for "Tickets" to the sidebar menu, following a similar structure to the "Overview" item. -->
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">
+                            <span class="selection-indicator"></span>
+                            <i class="fa-solid fa-ticket"></i>
+                            Tickets
+                        </a>
+                    </li>
+<!-- This code adds a navigation item for "Ideas" to the sidebar menu, following a similar structure to the previous items.  -->
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">
+                            <span class="selection-indicator"></span>
+                            <i class="fa-solid fa-lightbulb"></i>
+                            Ideas
+                        </a>
+                    </li>
+<!-- This code adds another navigation item for "Contacts" to the sidebar menu, following a similar structure to the previous items. -->
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">
+                            <span class="selection-indicator"></span>
+                            <i class="fa-solid fa-users"></i>
+                            Contacts
+                        </a>
+                    </li>
+<!-- This code adds another navigation item for "Agents" to the sidebar menu, following a similar structure to the previous items.  -->
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">
+                            <span class="selection-indicator"></span>
+                            <i class="fa-solid fa-user-tie"></i>
+                            Agents
+                        </a>
+                    </li>
+<!-- This code adds another navigation item for "Articles" to the sidebar menu, following a similar structure to the previous items. -->
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">
+                            <span class="selection-indicator"></span>
+                            <i class="fa-solid fa-book"></i>
+                            Articles
+                        </a>
+                    </li>
+<!-- horizontal line with a 1-pixel thickness, styled as a divider, used to visually separate different sections or categories within a sidebar.  -->
+                    <hr class="border-1 border-top sidebar-divider"/>
+
+<!-- This code adds another navigation item for "Settings" to the sidebar menu, following a similar structure to the previous items -->
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">
+                            <span class="selection-indicator"></span>
+                            <i class="fa-solid fa-gear"></i>
+                            Settings
+                        </a>
+                    </li>
+<!-- This code adds another navigation item for "Subscription" to the sidebar menu, following a similar structure to the previous items. -->
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">
+                            <span class="selection-indicator"></span>
+                            <i class="fa-solid fa-award"></i>
+                            Subscription
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+<!-- This defines a main content area that occupies different portions of the available width based on the screen size.
+    It is responsive, adapting to different screen sizes using Bootstrap's grid system.  -->
+        <main class="col-lg-10 col-md-9 ms-sm-auto">
+
+            <!-- This represents a container with an offset, a row containing a flex container, and a main heading for an "Overview" section. -->
+            <div class="offset-lg-1 col-lg-10 col-sm-12">
+                <!-- offset class is used to add spacing or an empty space of a certain number of columns before an element. It allows us to shift 
+                    the element horizontally within the grid layout. In this case offset-lg-1: on large screens (lg), it adds an offset or empty 
+                    space of 1 column before the element.-->
+                <div class="row">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+                        <!--  -->
+                        <h1 class="h1">
+                            Overview
+                        </h1>
+<!--  this code creates a flex container (d-flex align-items-center) for header controls. Inside this container, 
+    there are two icons – a magnifying glass for search and a bell for notifications. The bell icon may also 
+    include a <span> for displaying the count of unread notifications. -->
+                        <div class="header-controls d-flex align-items-center">
+                            <div>
+                                <i class="fa-solid fa-magnifying-glass"></i>
+
+                                <i class="fa-solid fa-bell">
+                                    <span class="unread-notifications"></span>
+                                </i>
+                            </div>
+
+                            <!-- vr: This class is a custom class, used for styling or identifying this specific <div>. The name "vr" suggests it is related to a vertical rule.
+header-vr: This class is another custom class, indicating a vertical rule specifically related to a header section. -->
+                            <div class="vr header-vr"></div>
+
+<!-- This code creates a <div> element with the class user-name to style and identify the section that contains the user's name. -->
+                            <div class="user-name">
+                                Jones Ferdinand
+                            </div>
+<!-- This code creates a visual representation of a user image using an outer and inner rounded-circle. -->
+                            <div class="user-image-outer-block rounded-circle">
+                                <!-- The class names suggest that it is used to create a rounded-circle block for the user image. -->
+                                <div class="user-image-inner-block rounded-circle">
+                                    <!-- Inside the outer <div>, there is an inner <div> with the classes user-image-inner-block and rounded-circle. 
+                                        This nested block provides additional styling or structure for the user image. -->
+                                    <img src="./assets/images/user.png" alt="user" width="43" height="43"
+                                         class="rounded-circle">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!-- This code creates a card with the title "Unresolved" and a numerical value of 60. -->
+                <div class="row">
+                    <div class="padded-row-column col-md-3 col-sm-12 margin-bottom">
+                        <!-- padded-row-column: for additional padding in the column. -->
+                        <div class="custom-card card top-row-card">
+                            <!-- custom-card: A custom class, suggesting a styled card.|| card: A Bootstrap class indicating that this is a card component.
+                                top-row-card: Another custom class, possibly indicating a specific style or placement.-->
+                            <div class="card-body">
+                                <h5 class="card-title">Unresolved</h5>
+                                <span class="card-value">60</span>
+                            </div>
+                        </div>
+                    </div>
+<!-- This code creates a card with the title "Overdue" and a numerical value of 16. -->
+                    <div class="padded-row-column col-md-3 col-sm-12 margin-bottom">
+                        <div class="custom-card card top-row-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Overdue</h5>
+                                <span class="card-value">16</span>
+                            </div>
+                        </div>
+                    </div>
+<!-- This code creates a card with the title "Open" and a numerical value of 43. -->
+                    <div class="padded-row-column col-md-3 col-sm-12 margin-bottom">
+                        <div class="custom-card card top-row-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Open</h5>
+                                <span class="card-value">43</span>
+                            </div>
+                        </div>
+                    </div>
+<!-- This code creates a card with the title "On hold" and a numerical value of 64 -->
+                    <div class="padded-row-column col-md-3 col-sm-12 margin-bottom">
+                        <div class="custom-card card top-row-card">
+                            <div class="card-body">
+                                <h5 class="card-title">On hold</h5>
+                                <span class="card-value">64</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+<!-- A row with a custom block and some bottom margin. This is a huge block that contains the Today's trends, the graphs and the 5 small cards on the right side. The graph "part" 
+is taking up 9 columns (md) and the cards 3 columns (md) -->
+                <div class="row custom-block margin-bottom">
+                    <div class="col-md-9 p-5">
+                        <div class="row">
+                            <div class="col">
+                                <h2 class="h2">
+                                    Today's trends
+                                </h2>
+                            </div>
+                        </div>
+<!-- A row with a full-width column containing a flex container. Inside the flex container, there is a nested div with a span element displaying information. -->
+                        <div class="row">
+                            <div class="col">
+                                <!-- The use of col class without specifying a specific size means it will take up the full width of its container. -->
+                                <div class="d-flex flex-row justify-content-between">
+                                    <div class="">
+                                        <!-- The empty class attribute suggests there was an additional styling that was removed for brevity. -->
+                                        <span class="info">
+                                            as of 25 May 2019, 09:41 PM
+                                        </span>
+                                    </div>
+<!-- A flex container with centered content. Inside the container, there is another flex container with a line element and a caption, used as a statistic legend for "Today." -->
+                                    <div class="d-flex justify-content-center">
+                                        <div class="statistic-legend d-flex align-items-center">
+                                            <span class="statistic-legend-line line-color-blue"></span>
+                                            <span class="statistic-legend-caption">Today</span>
+                                        </div>
+<!-- Another section of a statistic legend, for the time period "Yesterday. -->
+                                        <div class="statistic-legend d-flex align-items-center">
+                                            <span class="statistic-legend-line line-color-divider"></span>
+                                            <span class="statistic-legend-caption">Yesterday</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+<!--  This code creates a row with a single column that contains an image of a graph. -->
+                        <div class="row">
+<!-- The container for the div with the class col is the Bootstrap row, indicated by the <div class="row"> element. 
+    The row class is a Bootstrap class that creates a horizontal grouping of columns. 
+    Each direct child <div> with the class col inside this row becomes a column. -->
+                            <div class="col">
+                                <img src="./assets/images/graph.svg" alt="Graph" class="statistic-image"/>
+                            </div>
+                        </div>
+                    </div>
+<!-- In this column which takes up 3 out of 12 columns, there are 5 small cards under each other. -->
+                    <div class="col-md-3 p-0 custom-border-left">
+                        <div class="custom-card-small">
+                            <div class="card-body">
+                                <h5 class="card-title">Resolved</h5>
+                                <span class="card-value">449</span>
+                            </div>
+                        </div>
+
+                        <div class="custom-card-small">
+                            <div class="card-body">
+                                <h5 class="card-title">Received</h5>
+                                <span class="card-value">426</span>
+                            </div>
+                        </div>
+
+                        <div class="custom-card-small">
+                            <div class="card-body">
+                                <h5 class="card-title">Average first response time</h5>
+                                <span class="card-value">33m</span>
+                            </div>
+                        </div>
+
+                        <div class="custom-card-small">
+                            <div class="card-body">
+                                <h5 class="card-title">Average response time</h5>
+                                <span class="card-value">3h 8m</span>
+                            </div>
+                        </div>
+
+                        <div class="custom-card-small">
+                            <div class="card-body">
+                                <h5 class="card-title">Resolution within SLA</h5>
+                                <span class="card-value">94%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!-- A block for displaying information about unresolved tickets, including the ticket count, a link to view details, and information about the ticket group. -->
+                <div class="row">
+                    <div class="padded-row-column col-md-6 col-12 p-0 margin-bottom">
+                        <div class="custom-block">
+                            <div class="row">
+                                <div class="col">
+
+                                    <div class="p-4">
+                                        <div class="d-flex flex-row justify-content-between">
+                                            <h2 class="h2">
+                                                Unresolved tickets
+                                            </h2>
+
+                                            <span class="link">
+                                                View details
+                                            </span>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col">
+                                                <span>
+                                                    Group: <span class="info">support</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+<!--  This code creates a styled list group with various statuses of unresolved tickets, each accompanied by a count. Still part of the block above.-->
+                            <div class="row">
+                                <div class="col">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <div class="d-flex flex-row justify-content-between">
+                                                <span>Waiting on feature request</span>
+                                                <span class="gray">4238</span>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="d-flex flex-row justify-content-between">
+                                                <span>Awaiting customer response</span>
+                                                <span class="gray">1005</span>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="d-flex flex-row justify-content-between">
+                                                <span>Awaiting developer fix</span>
+                                                <span class="gray">914</span>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="d-flex flex-row justify-content-between">
+                                                <span>Pending</span>
+                                                <span class="gray">281</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!-- This code extends the layout to include a list of tasks with various details, checkboxes for completion status, 
+    and badges for additional information about each task.  -->
+                    <div class="padded-row-column col-md-6 col-12 p-0 margin-bottom">
+                        <div class="custom-block">
+                            <div class="row">
+                                <div class="col">
+
+                                    <div class="p-4">
+                                        <div class="d-flex flex-row justify-content-between">
+                                            <h2 class="h2">
+                                                Tasks
+                                            </h2>
+
+                                            <span class="link">
+                                                View all
+                                            </span>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col">
+                                                <div>
+                                                    <span class="info">Today</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+<!-- This code creates a visually organized list of tasks with checkboxes for completion status and badges for additional information about each task. 
+    The specific styling and appearance depend on the associated CSS rules, including Bootstrap's default styles for list groups and form elements. -->
+                            <div class="row">
+                                <div class="col">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <div class="d-flex flex-row justify-content-between">
+                                                <span class="gray">Create new task</span>
+
+                                                <div class="add-new-item">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="d-flex flex-row justify-content-between">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="">
+                                                    <label class="form-check-label">
+                                                        Finish ticket update
+                                                    </label>
+                                                </div>
+                                                <span class="badge bg-warning d-flex align-items-center">Urgent</span>
+                                            </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <div class="d-flex flex-row justify-content-between">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="">
+                                                    <label class="form-check-label">
+                                                        Create new ticket example
+                                                    </label>
+                                                </div>
+                                                <span class="badge bg-success d-flex align-items-center">New</span>
+                                            </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <div class="d-flex flex-row justify-content-between">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" checked="checked">
+                                                    <label class="form-check-label">
+                                                        Update ticket report
+                                                    </label>
+                                                </div>
+                                                <span class="badge bg-gray d-flex align-items-center">Default</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</div>
+
+
+<script src="./assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
